@@ -7,7 +7,7 @@ import { Header } from "./Components/Header/Header"
 function App() {
   const [meanings, setmeanings] = useState([])
   const [word, setword] = useState("")
-
+  const [Language, setLanguage] = useState("en")
   const fetchDictionaryApi = async () => {
     try {
       const { data } = await axios.get(
@@ -29,7 +29,12 @@ function App() {
         maxWidth="md"
         style={{ display: "flex", flexDirection: "column", height: "100vh" }}
       >
-        <Header />
+        <Header
+          word={word}
+          setword={setword}
+          language={Language}
+          setlanguage={setLanguage}
+        />
       </Container>
     </div>
   )

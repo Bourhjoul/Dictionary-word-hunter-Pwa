@@ -7,6 +7,7 @@ import { Definitions } from "./Components/Definitions/Definitions"
 import { Header } from "./Components/Header/Header"
 import { FaMoon } from "react-icons/fa"
 import { BsSun } from "react-icons/bs"
+import { Footer } from "./Components/Footer/Footer"
 function App() {
   const [meanings, setmeanings] = useState([])
   const [word, setword] = useState("")
@@ -64,6 +65,7 @@ function App() {
             DarkMode={DarkMode}
           />
         )}
+        <Footer DarkMode={DarkMode} />
       </Container>
     </div>
   )

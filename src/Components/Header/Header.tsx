@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
   }
   return (
     <div className="header">
-      <span className="logo"> {word ? word : "WORD HUNTER DECTIONARY"} </span>
+      <span className="logo"> {word ? word : "HUNTER DECTIONARY"} </span>
       <div className="Inputs">
         <ThemeProvider theme={darkTheme}>
           <TextField

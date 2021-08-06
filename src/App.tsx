@@ -10,12 +10,14 @@ function App() {
   const [meanings, setmeanings] = useState([])
   const [word, setword] = useState("")
   const [Language, setLanguage] = useState("en")
+  const [fetchError, setfetchError] = useState("")
   const fetchDictionaryApi = useCallback(async () => {
     try {
+      setmeanings([])
       const { data } = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/${Language}/${word}`
       )
-      setmeanings(data)
+      setmeanings(data.length === 0 ? [] : data)
     } catch (error) {
       console.log(error)
     }
@@ -37,7 +39,9 @@ function App() {
           language={Language}
           setlanguage={setLanguage}
         />
-        {meanings && <Definitions word={word} results={meanings} />}
+        {meanings && (
+          <Definitions word={word} results={meanings} Language={Language} />
+        )}
       </Container>
     </div>
   )

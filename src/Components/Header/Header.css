@@ -1,5 +1,5 @@
 .logo {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 .header {
   display: flex;
@@ -7,4 +7,24 @@
   justify-content: space-around;
   flex-direction: column;
   height: 35vh;
+}
+
+.Inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.Word,
+.Language {
+  width: 40%;
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: 25vh;
+  }
+
+  .logo {
+    font-size: 7vw;
+  }
 }

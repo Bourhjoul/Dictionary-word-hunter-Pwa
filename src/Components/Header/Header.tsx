@@ -32,12 +32,20 @@ export const Header: React.FC<HeaderProps> = ({
       fontFamily: "Space Grotesk",
     },
   })
+
+  const handleLanguageChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setlanguage(e.target.value)
+    setword("")
+  }
   return (
     <div className="header">
-      <span className="logo"> WORD HUNTER DECTIONARY </span>
+      <span className="logo"> {word ? word : "WORD HUNTER DECTIONARY"} </span>
       <div className="Inputs">
         <ThemeProvider theme={darkTheme}>
           <TextField
+            className="Word"
             value={word}
             onChange={(e) => {
               setword(e.target.value)
@@ -46,8 +54,9 @@ export const Header: React.FC<HeaderProps> = ({
           />
           <TextField
             select
+            className="Language"
             label="Select"
-            onChange={(e) => setlanguage(e.target.value)}
+            onChange={handleLanguageChange}
             value={language}
             helperText="Please select the language"
           >

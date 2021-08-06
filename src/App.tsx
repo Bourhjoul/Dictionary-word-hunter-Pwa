@@ -1,6 +1,7 @@
 import { Container } from "@material-ui/core"
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import { useCallback } from "react"
 import "./App.css"
 import { Header } from "./Components/Header/Header"
 
@@ -8,19 +9,19 @@ function App() {
   const [meanings, setmeanings] = useState([])
   const [word, setword] = useState("")
   const [Language, setLanguage] = useState("en")
-  const fetchDictionaryApi = async () => {
+  const fetchDictionaryApi = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        "https://api.dictionaryapi.dev/api/v2/entries/en/play"
+        `https://api.dictionaryapi.dev/api/v2/entries/${Language}/${word}`
       )
       setmeanings(data)
     } catch (error) {
       console.log(error)
     }
-  }
+  }, [word, Language])
   useEffect(() => {
     fetchDictionaryApi()
-  }, [])
+  }, [fetchDictionaryApi])
 
   console.log(meanings)
   return (

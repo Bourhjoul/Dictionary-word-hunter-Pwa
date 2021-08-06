@@ -3,6 +3,7 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { useCallback } from "react"
 import "./App.css"
+import { Definitions } from "./Components/Definitions/Definitions"
 import { Header } from "./Components/Header/Header"
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           language={Language}
           setlanguage={setLanguage}
         />
+        {meanings && <Definitions word={word} results={meanings} />}
       </Container>
     </div>
   )

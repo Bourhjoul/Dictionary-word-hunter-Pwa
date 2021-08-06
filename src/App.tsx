@@ -1,6 +1,8 @@
+import { Container } from "@material-ui/core"
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import "./App.css"
+import { Header } from "./Components/Header/Header"
 
 function App() {
   const [meanings, setmeanings] = useState([])
@@ -21,7 +23,16 @@ function App() {
   }, [])
 
   console.log(meanings)
-  return <div className="App">Word Hunter</div>
+  return (
+    <div className="App">
+      <Container
+        maxWidth="md"
+        style={{ display: "flex", flexDirection: "column", height: "100vh" }}
+      >
+        <Header />
+      </Container>
+    </div>
+  )
 }
 
 export default App

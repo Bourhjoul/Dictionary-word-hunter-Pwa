@@ -12,20 +12,23 @@ interface HeaderProps {
   setlanguage: React.Dispatch<React.SetStateAction<string>>
   word: string
   setword: React.Dispatch<React.SetStateAction<string>>
+  DarkMode: boolean
 }
 
 export const Header: React.FC<HeaderProps> = ({
   language,
   setlanguage,
   word,
+  DarkMode,
+
   setword,
 }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#FEFEFE",
+        main: DarkMode ? "#eaeaea" : "#0d1117",
       },
-      type: "dark",
+      type: !DarkMode ? "light" : "dark",
     },
     typography: {
       fontFamily: "Space Grotesk",
@@ -40,7 +43,12 @@ export const Header: React.FC<HeaderProps> = ({
   }
   return (
     <div className="header">
-      <span className="logo"> {word ? word : "HUNTER DECTIONARY"} </span>
+      <span
+        className="logo"
+        style={{ color: DarkMode ? "#eaeaea" : "#0d1117" }}
+      >
+        {word ? word : "HUNTER DECTIONARY"}{" "}
+      </span>
       <div className="Inputs">
         <ThemeProvider theme={darkTheme}>
           <TextField

@@ -4,18 +4,28 @@ interface DefinitionsProps {
   word: string
   results: any[]
   Language: string
+  DarkMode: boolean
 }
 
 export const Definitions: React.FC<DefinitionsProps> = ({
   word,
   results,
   Language,
+  DarkMode,
 }) => {
-  //   console.log("results", results[0].phonetics[0].audio)
   return (
-    <div className="Definitions">
+    <div
+      className="Definitions"
+      style={{
+        border: DarkMode ? "5px #eaeaea solid" : "5px #0d1117 solid",
+      }}
+    >
       {results[0] && word && Language === "en" && (
-        <audio controls style={{ backgroundColor: "#fefefe" }} autoPlay>
+        <audio
+          controls
+          style={{ backgroundColor: DarkMode ? "#eaeaea" : "#0d1117" }}
+          autoPlay
+        >
           <source
             src={results[0].phonetics[0] ? results[0].phonetics[0].audio : ""}
             type="audio/mp3"
@@ -29,7 +39,13 @@ export const Definitions: React.FC<DefinitionsProps> = ({
         results.map((result) =>
           result.meanings.map((meaning: any) =>
             meaning.definitions.map((def: any) => (
-              <div className="definition">
+              <div
+                className="definition"
+                style={{
+                  backgroundColor: DarkMode ? "#eaeaea" : "#0d1117",
+                  color: !DarkMode ? "#eaeaea" : "#0d1117",
+                }}
+              >
                 <div>
                   <b>{def.definition}</b>{" "}
                   <i>
@@ -37,7 +53,12 @@ export const Definitions: React.FC<DefinitionsProps> = ({
                     {result.phonetics[0] && result.phonetics[0].text}
                   </i>
                 </div>
-                <hr style={{ backgroundColor: "#0d1117", width: "100%" }} />
+                <hr
+                  style={{
+                    backgroundColor: DarkMode ? "#eaeaea" : "#0d1117",
+                    width: "100%",
+                  }}
+                />
                 {def.example && (
                   <span>
                     <b>Example : </b>

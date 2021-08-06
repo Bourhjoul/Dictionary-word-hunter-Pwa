@@ -1,5 +1,22 @@
 .App {
   height: 100vh;
   background-color: #0d1117;
-  color: #fefefe;
+  color: #eaeaea;
+  transition: all 0.5s ease-in-out;
+}
+.DarkApp {
+  height: 100vh;
+  color: #0d1117;
+  background-color: #eaeaea;
+  transition: all 0.5s ease-in-out;
+}
+.ThemeSwticher {
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
 }

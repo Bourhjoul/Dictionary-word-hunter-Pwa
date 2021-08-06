@@ -22,6 +22,7 @@
 @media (max-width: 900px) {
   .header {
     height: 25vh;
+    margin-top: 30px;
   }
 
   .logo {

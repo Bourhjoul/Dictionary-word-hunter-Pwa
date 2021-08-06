@@ -4,7 +4,6 @@
   overflow-y: scroll;
   scrollbar-width: thin;
   -webkit-scrollbar: thin;
-  border: 5px #fefefe solid;
   height: 55vh;
   padding: 2rem;
   border-radius: 5px;
@@ -18,8 +17,8 @@
 .definition {
   display: flex;
   flex-direction: column;
-  background-color: #fefefe;
-  color: #0d1117;
+  /* background-color: #fefefe;
+  color: #0d1117; */
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;

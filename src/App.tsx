@@ -32,7 +32,7 @@ function App() {
   return (
     <div className={DarkMode ? "App" : "DarkApp"}>
       <div style={{ position: "absolute", top: 0, right: "10px" }}>
-        <span>{DarkMode ? "Dark Mode" : "Light Mode"}</span>
+        <span>{DarkMode ? "Dark" : "Light"}</span>
         <button
           className="ThemeSwticher"
           onClick={() => setDarkMode(!DarkMode)}

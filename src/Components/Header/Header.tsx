@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
             onChange={(e) => {
               setword(e.target.value)
             }}
-            label="The Word to Hunt."
+            label="Word to Hunt."
           />
           <TextField
             select

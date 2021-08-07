@@ -38,9 +38,10 @@ export const Definitions: React.FC<DefinitionsProps> = ({
       ) : (
         results.map((result) =>
           result.meanings.map((meaning: any) =>
-            meaning.definitions.map((def: any) => (
+            meaning.definitions.map((def: any, index: number) => (
               <div
                 className="definition"
+                key={index}
                 style={{
                   backgroundColor: DarkMode ? "#eaeaea" : "#0d1117",
                   color: !DarkMode ? "#eaeaea" : "#0d1117",

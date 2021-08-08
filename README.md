@@ -1,7 +1,7 @@
 # Dictionary-word-hunter
 
 ## Goal 
-The main goal of this project was to build a small Dictionary Using [This api](https://dictionaryapi.dev/), react and material Ui and after convert it to a progressive web app.
+The main goal of this project was to build a small Dictionary Using [This api](https://dictionaryapi.dev/), react and material Ui and convert it to a progressive web app.
 
 ## Demo
 [Word Hunter](https://word-hunter-dectionary.netlify.app/)
